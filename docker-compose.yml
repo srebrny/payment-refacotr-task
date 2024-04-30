@@ -1,0 +1,11 @@
+version: ""
+
+services:
+    app:
+        build:
+            dockerfile: .docker/Dockerfile
+        volumes:
+            -   "./app:/app"
+        working_dir: /app
+        environment:
+            EXCHANGE_RATE_API_KEY: $EXCHANGE_RATE_API_KEY
