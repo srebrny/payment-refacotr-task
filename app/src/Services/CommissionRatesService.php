@@ -45,16 +45,16 @@ class CommissionRatesService implements CommissionRatesServiceInterface
     public function calculate(string $currency, float $amount, float $rate, string $country): float
     {
         $amntFixed = 0;
-        if ($currency === self::EURO) {
-            if ($rate === 0.00) {
-                $amntFixed = $amount;
-            }
-        } else {
-            if ($rate > 0) {
-                $amntFixed = $amount / $rate;
-            }
+
+        if ($currency === self::EURO || $rate === 0.00) {
+            $amntFixed = $amount;
+        }
+        if ($currency !== self::EURO || $rate > 0.00) {
+            $amntFixed = $amount / $rate;
         }
 
-        return $amntFixed * ($this->isEu($country) ? 0.01 : 0.02);
+        $provision = $amntFixed * ($this->isEu($country) ? 0.01 : 0.02);
+
+        return round($provision, 2);
     }
 }

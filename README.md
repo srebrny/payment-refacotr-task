@@ -9,10 +9,11 @@ docker compose up -d
 `docker compose run -rm app vendor/bin/codecept run --coverage`
 
 # Total time 
-+ 30 min - Init docker, composer, project initialisation, copy readme and files + first run of code and run codeception.
-+ 30 min - Setup unit, code coverage and Dockerfile
-+ 60 min - Basics of interfaces, services, base of tests refactoring / rewriting code. Make some plans for applications.
-
++  30 min - Init docker, composer, project initialisation, copy readme and files + first run of code and run codeception.
++  30 min - Setup unit, code coverage and Dockerfile
++  60 min - Basics of interfaces, services, base of tests refactoring / rewriting code. Make some plans for applications.
++ 180 min - tests, services for BIN, rates, some troubles with codeception
++ 
 # Situation
 
 - We'll provide you with some really ugly, but kinda working code;
